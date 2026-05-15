@@ -3,43 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0d9488" /> <!-- {/* Cor do tema (Teal-600) para barra do navegador mobile */} -->
-    <!-- Verificar propriedade indicar no google -->
+    <meta name="theme-color" content="#0d9488" />
     <meta name="google-site-verification" content="Bnk54SYt11wROD5gtuK5OOf5zcA41N18sWLpK0vMgHE" />
 
     <!-- SEO Primário -->
-    <title>Dr. Pedro Elino | Cirurgião Dentista</title>
-    <meta name="description" content="Agende sua consulta com Dr. Pedro Elino. Especialista em cirurgia oral, implantes e estética dental em São Paulo do Potengi - RN." />
-    <meta name="keywords" content="dentista, cirurgia oral, natal, dentista em natal, são paulo do potengi, implantes, dr pedro elino, odontologia" />
+    <title>Dr. Pedro Elino | Cirurgião Dentista em SP do Potengi e Natal</title>
+    <meta name="description" content="Agende sua consulta com Dr. Pedro Elino. Especialista em cirurgia oral, implantes e estética dental em São Paulo do Potengi, Natal e Parnamirim - RN." />
+    <meta name="keywords" content="dentista, cirurgia oral, natal, dentista em natal, são paulo do potengi, implantes, dr pedro elino, odontologia, parnamirim" />
     <meta name="author" content="Dr. Pedro Elino" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Facebook / WhatsApp (Preview do Link) -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:url" content="https://dr-pedro-elino.netlify.app/" />
     <meta property="og:title" content="Dr. Pedro Elino | Excelência em Odontologia" />
     <meta property="og:description" content="Cuidado especializado e atendimento humanizado. Agende sua avaliação." />
-    <meta property="og:image" content=/drpedro.jpg" />
+    <meta property="og:image" content="/drpedro.webp" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Dr. Pedro Elino | Cirurgião Dentista" />
     <meta property="twitter:description" content="Cuidado especializado e atendimento humanizado em São Paulo do Potengi." />
-    <meta property="twitter:image" content="/drpedro.jpg" />
+    <meta property="twitter:image" content="/drpedro.webp" />
 
-    <!-- Ícone (Favicon) -->
-    <link rel="icon" type="image/svg+xml" href="public/drpedro2-logo.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/drpedro2-logo.png" />
+    <link rel="apple-touch-icon" href="/drpedro2-logo.png" />
 
-    <!-- Performance: Preconnect para Fontes do Google -->
+    <!-- Preconnect (Performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Fonte Inter (Padrão Moderno e Limpo) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+    <!-- Preload da Imagem Hero (CRÍTICO para LCP) -->
+    <link 
+      rel="preload" 
+      as="image" 
+      href="/drpedro2.webp" 
+      fetchpriority="high"
+    />
+
+    <!-- Fonte Inter (otimizada com display=swap) -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+      rel="stylesheet" 
+    />
+
+    <!-- Schema.org / Rich Snippets para SEO local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Dr. Pedro Elino",
+      "image": "https://dr-pedro-elino.netlify.app/drpedro.webp",
+      "url": "https://dr-pedro-elino.netlify.app/",
+      "telephone": "+5584991627325",
+      "priceRange": "$$",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Bento Urbano, 4026, sala 07",
+          "addressLocality": "São Paulo do Potengi",
+          "addressRegion": "RN",
+          "addressCountry": "BR"
+        }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
   </head>
   <body class="antialiased bg-slate-50 text-slate-900">
     <div id="root"></div>
     
-    <!-- Fallback para usuários sem JS -->
     <noscript>
       <div style="padding: 20px; text-align: center;">
         Você precisa habilitar o JavaScript para visualizar este site corretamente.
