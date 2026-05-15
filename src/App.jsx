@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, Calendar, MapPin, Phone, Instagram, 
   CheckCircle, ArrowRight, Smile, User, Star, ShieldCheck,
@@ -297,7 +297,6 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null);
   
   useEffect(() => {
-    document.title = `${DATA.name} | Cirurgião Dentista em SP do Potengi e Natal`;
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -359,10 +358,7 @@ export default function App() {
           <div className="flex justify-between items-center h-full">
             <div className={`transition-transform duration-500 origin-left ${isScrolled ? 'scale-90' : 'scale-100'}`}>
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="flex items-center gap-2 group">
-                <motion.div 
-                  whileHover={{ rotate: 15 }} 
-                  className="p-0 rounded-lg"
-                >
+                <div className="p-0 rounded-lg">
                   <img
                     src="/drpedro2-logo.png"
                     width={48}
@@ -371,7 +367,7 @@ export default function App() {
                     loading="eager"
                     decoding="async"
                   />
-                </motion.div>
+                </div>
                 <div>
                   <h1 className="text-xl font-bold text-slate-900 tracking-tight leading-none group-hover:text-teal-700 transition-colors">Dr. Pedro Elino</h1>
                   <span className="text-xs text-teal-700 font-semibold tracking-wider">CIRURGIÃO DENTISTA</span>
@@ -390,15 +386,13 @@ export default function App() {
                   {link.name}
                 </a>
               ))}
-              <motion.a 
+              <a 
                 href="#contact"
                 onClick={(e) => scrollToSection(e, '#contact')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-teal-700 text-white px-6 py-2.5 rounded-full font-medium hover:bg-teal-800 transition-colors shadow-lg shadow-teal-700/20 cursor-pointer"
+                className="bg-teal-700 text-white px-6 py-2.5 rounded-full font-medium hover:bg-teal-800 transition-all shadow-lg shadow-teal-700/20 cursor-pointer hover:scale-105 active:scale-95"
               >
                 Agendar
-              </motion.a>
+              </a>
             </div>
 
             <div className="md:hidden flex items-center">
@@ -443,14 +437,14 @@ export default function App() {
       <section id="home" className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src={DATA.images.hero} 
+            src="/drpedro2.webp" 
             alt="Consultório odontológico do Dr. Pedro Elino" 
             className="w-full h-full object-cover brightness-[0.9]"
             fetchpriority="high"
             loading="eager"
             decoding="async"
-            width="1920"
-            height="1080"
+            width="1600"
+            height="900"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent sm:via-white/60"></div>
         </div>
@@ -475,27 +469,23 @@ export default function App() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.a 
+              <a 
                 href="#contact" 
                 onClick={(e) => scrollToSection(e, '#contact')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-teal-700 hover:bg-teal-800 md:text-lg transition-all shadow-xl shadow-teal-700/30 cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-teal-700 hover:bg-teal-800 md:text-lg transition-all shadow-xl shadow-teal-700/30 cursor-pointer hover:scale-105 active:scale-95"
               >
                 Agendar Avaliação
                 <ArrowRight className="ml-2 -mr-1" size={20} aria-hidden="true" />
-              </motion.a>
-              <motion.a 
+              </a>
+              <a 
                 href={`https://wa.me/${DATA.whatsapp}`}
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-slate-300 text-base font-medium rounded-xl text-slate-800 bg-white/70 backdrop-blur-sm hover:bg-white hover:border-teal-700 hover:text-teal-700 md:text-lg transition-all cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-slate-300 text-base font-medium rounded-xl text-slate-800 bg-white/70 backdrop-blur-sm hover:bg-white hover:border-teal-700 hover:text-teal-700 md:text-lg transition-all cursor-pointer hover:scale-105 active:scale-95"
               >
                 <Phone className="mr-2" size={20} aria-hidden="true" />
                 Conversar no WhatsApp
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
@@ -809,16 +799,14 @@ export default function App() {
                     />
                   </div>
 
-                  <motion.button 
+                  <button 
                     type="submit" 
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-teal-700 text-white font-bold py-4 rounded-xl hover:bg-teal-800 transition-colors shadow-lg shadow-teal-700/30 flex items-center justify-center gap-2 group"
+                    className="w-full bg-teal-700 text-white font-bold py-4 rounded-xl hover:bg-teal-800 transition-all shadow-lg shadow-teal-700/30 flex items-center justify-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <MessageCircle className="w-5 h-5" aria-hidden="true" />
                     Agendar via WhatsApp
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} aria-hidden="true" />
-                  </motion.button>
+                  </button>
                   
                   <p className="text-xs text-center text-slate-500 mt-4">
                     Seus dados serão enviados diretamente para o WhatsApp do consultório.
